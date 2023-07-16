@@ -1,0 +1,21 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.mediaBuzzRoutes = void 0;
+const express_1 = __importDefault(require("express"));
+const mediaBuzz_controller_1 = require("./mediaBuzz.controller");
+const router = express_1.default.Router();
+router.get("/", mediaBuzz_controller_1.getAllMediaBuzz);
+router.get("/:id", mediaBuzz_controller_1.getBuzzById);
+router.post("/createMediaBuzz", mediaBuzz_controller_1.createMediaBuzz);
+router.patch("/addGuest/:id", mediaBuzz_controller_1.addGuest);
+router.patch("/addMeetTheGuests/:id", mediaBuzz_controller_1.addMeetTheGuestVideo);
+router.patch("/addSponsors/:id", mediaBuzz_controller_1.addSponsors);
+router.patch("/addTopEvent/:id", mediaBuzz_controller_1.addTopEvent);
+router.patch("/addExhibitionPhoto/:id", mediaBuzz_controller_1.addExhibitionPhoto);
+router.patch("/addMemoriesPhoto/:id", mediaBuzz_controller_1.addMemoriesPhoto);
+router.patch("/addMemoriesVideo/:id", mediaBuzz_controller_1.addMemoriesVideo);
+router.patch("/addTestimonial/:id", mediaBuzz_controller_1.addTestimonial);
+exports.mediaBuzzRoutes = router;
